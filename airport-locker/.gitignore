@@ -23,6 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-luggage.db
+/luggage.db
 /node_modules
 /.env
