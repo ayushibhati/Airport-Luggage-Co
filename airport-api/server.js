@@ -3,14 +3,18 @@ const express = require('express');
 const sqlite3 = require('sqlite3');
 const { open } = require('sqlite');
 const cors = require('cors');
+const path = require('path'); 
 
 // --- Initialize the Express App ---
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 // --- Setup Middleware ---
 app.use(cors());
 app.use(express.json());
+
+// Serve the static files from the React app's 'dist' folder
+app.use(express.static(path.join(__dirname, 'dist')));
 
 // --- Billing Calculation Helper ---
 const calculateFee = (isoString) => {
@@ -130,6 +134,12 @@ app.post('/api/checkout', async (req, res) => {
         console.error('Failed to check out luggage:', error);
         res.status(500).json({ success: false, message: 'Internal Server Error during checkout.' });
     }
+});
+
+// The "catchall" handler: for any request that doesn't match one above,
+// send back React's index.html file.
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 // --- Start the Server ---

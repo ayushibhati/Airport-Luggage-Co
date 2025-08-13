@@ -40,18 +40,3 @@
 .read-the-docs {
   color: #888;
 }
-
-/* --- ADDED ICON STYLES --- */
-
-/* For the 48px icons in the success/error modals */
-.icon-large {
-  font-size: 48px !important;
-}
-
-/* For the 64px icon on the check-in page */
-.icon-xlarge {
-  font-size: 64px !important;
-  /* Ensure the element reserves the correct space */
-  width: 64px;
-  height: 64px;
-}

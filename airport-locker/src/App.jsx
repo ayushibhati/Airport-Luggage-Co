@@ -1,7 +1,6 @@
 import React, { useState, useMemo, useEffect, useCallback } from 'react';
 
-// --- API Configuration ---
-const API_URL = 'http://127.0.0.1:3001';
+const API_URL = ''; // Make API calls to the same server that serves the app
 
 // --- Helper Functions ---
 const formatDuration = (isoString) => {
