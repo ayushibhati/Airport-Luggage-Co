@@ -23,6 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 
-/luggage.db
-/node_modules
-/.env
+.env
+
+airport-api/node_modules/
+airport-api/luggage.db
+airport-locker/node_modules/
