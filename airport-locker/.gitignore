@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 
 luggage.db
+/node_modules
+/.env
